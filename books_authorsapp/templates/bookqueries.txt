@@ -1,0 +1,65 @@
+Book.objects.create(title="C Sharp", description="this book is fire")
+Book.objects.create(title="Java", description="this book is fire")
+Book.objects.create(title="Python", description="this book is fire")
+Book.objects.create(title="PHP", description="this book is fire")
+Book.objects.create(title="Ruby", description="this book is fire")
+
+Author.objects.create(firstname="Jane", lastname="Austen", )
+Author.objects.create(firstname="Emily", lastname="Dickenson", )
+Author.objects.create(firstname="Fyodor", lastname="Dostoevsky", )
+Author.objects.create(firstname="William", lastname="Shakespeare", )
+Author.objects.create(firstname="Lau", lastname="Tzu", )
+
+Author4.firstname
+'William'
+>>> Author4.firstname="Bill"
+>>> Author4.save()
+>>> Author.objects.get(id=1)
+<Author: Author object (1)>
+>>> Author1=Author.objects.get(id=1)
+>>> Author1
+<Author: Author object (1)>
+>>> Book.objects.get(id=1)
+<Book: Book object (1)>
+>>> Book1
+<Book: Book object (1)>
+>>> Book.objects.get(id=2)
+<Book: Book object (2)>
+>>> Book2=Book.objects.get(id=2)
+>>> Book2
+<Book: Book object (2)>
+>>> Author1.books.add(Book1)
+>>> Author1.books.add(Book2)
+>>> 
+>>> Book.objects.get(id=3)
+<Book: Book object (3)>
+>>> Book3=Book.objects.get(id=3)
+>>> Book3
+<Book: Book object (3)>
+>>> Author2.books.add(Book1,Book2,Book3)
+>>> Book.objects.get(id=4)
+<Book: Book object (4)>
+>>> Book4=Book.objects.get(id=4)
+>>> Author.objects.get(id=4)
+<Author: Author object (4)>
+>>> Author4=Author.objects.get(id=4)
+>>> Author.objects.get(id=3)
+<Author: Author object (3)>
+>>> Author3=Author.objects.get(id=3)
+>>> Author3.books.add(Book1,Book2,Book3,Book4)
+>>> Book.objects.get(id=5)
+<Book: Book object (5)>
+>>> Book5=Book.objects.get(id=5)
+>>> Author4.books.add(Book1,Book2,Book3,Book4,Book5)
+>>> Book3.authors.all()
+Book3.authors.remove(Author1)
+>>> Author.objects.get(id=5)
+<Author: Author object (5)>
+>>> Author5=Author.objects.get(id=5)
+>>> Author5.books.add(Book2)
+>>> 
+>>> Author3.books.all()
+<QuerySet [<Book: Book object (1)>, <Book: Book object (2)>, <Book: Book object (3)>, <Book: Book object (4)>]>
+>>> >>> Book5.authors.all()
+<QuerySet [<Author: Author object (4)>]>
+>>> 
